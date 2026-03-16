@@ -15,9 +15,16 @@ padding:0;
 
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:
+radial-gradient(circle at top left, rgba(0,170,255,0.16), transparent 28%),
+radial-gradient(circle at top right, rgba(123,92,255,0.16), transparent 28%),
+linear-gradient(135deg,#08121f,#102235,#132c42);
 color:white;
 line-height:1.6;
+}
+
+a{
+text-decoration:none;
 }
 
 nav{
@@ -25,89 +32,161 @@ display:flex;
 justify-content:center;
 gap:20px;
 padding:16px;
-background:rgba(0,0,0,0.3);
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
 position:sticky;
 top:0;
 z-index:100;
+border-bottom:1px solid rgba(255,255,255,0.08);
 flex-wrap:wrap;
 }
 
 nav a{
 color:white;
-text-decoration:none;
 font-weight:bold;
+font-size:15px;
+}
+
+nav a:hover{
+color:#8fe6ff;
 }
 
 .hero{
 text-align:center;
-padding:90px 20px;
+padding:100px 20px 70px;
+max-width:1100px;
+margin:auto;
+}
+
+.hero-badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+color:#bfe9ff;
+font-size:14px;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:54px;
-margin-bottom:20px;
+font-size:58px;
+max-width:900px;
+margin:0 auto 18px;
+line-height:1.05;
 }
 
 .hero p{
 font-size:20px;
-max-width:700px;
-margin:auto;
-margin-bottom:30px;
+max-width:720px;
+margin:0 auto 28px;
+color:rgba(255,255,255,0.86);
 }
 
-.button{
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.button,
+.secondary-button{
 display:inline-block;
-padding:12px 20px;
-background:#0077ff;
-color:white;
-border-radius:8px;
-text-decoration:none;
+padding:13px 20px;
+border-radius:12px;
 font-weight:bold;
 }
 
+.button{
+background:linear-gradient(135deg,#00aaff,#3b82f6);
+color:white;
+box-shadow:0 12px 28px rgba(0,170,255,0.22);
+}
+
+.button:hover{
+opacity:0.95;
+}
+
+.secondary-button{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.12);
+color:white;
+}
+
 .section{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
-padding:60px 20px;
+padding:55px 20px;
 }
 
 .section h2{
 text-align:center;
-font-size:34px;
-margin-bottom:20px;
+font-size:36px;
+margin-bottom:14px;
 }
 
 .section-subtitle{
 text-align:center;
 max-width:760px;
-margin:0 auto 30px;
-color:rgba(255,255,255,0.85);
+margin:0 auto 32px;
+color:rgba(255,255,255,0.82);
+font-size:18px;
 }
 
-.search{
+.search-box{
+max-width:760px;
+margin:0 auto 34px;
 display:flex;
-justify-content:center;
-gap:10px;
-margin-bottom:40px;
+gap:12px;
 flex-wrap:wrap;
+justify-content:center;
 }
 
-.search input{
-padding:12px;
-border-radius:8px;
+.search-box input{
+flex:1;
+min-width:240px;
+padding:16px;
 border:none;
-width:300px;
-max-width:100%;
+border-radius:14px;
+font-size:16px;
 }
 
-.search button{
-padding:12px 20px;
+.search-box button{
+padding:16px 22px;
 border:none;
-border-radius:8px;
-background:#00aaff;
+border-radius:14px;
+background:linear-gradient(135deg,#00aaff,#3b82f6);
 color:white;
 font-weight:bold;
 cursor:pointer;
+}
+
+#searchResults{
+text-align:center;
+margin-top:18px;
+color:#cceeff;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+gap:18px;
+margin-top:10px;
+}
+
+.stat{
+background:rgba(255,255,255,0.08);
+padding:22px;
+border-radius:18px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.stat h3{
+font-size:32px;
+margin-bottom:6px;
+color:#8fe6ff;
 }
 
 .grid{
@@ -117,85 +196,158 @@ gap:20px;
 }
 
 .card{
-background:white;
-color:#222;
-padding:20px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
+background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,250,255,0.96));
+color:#1f2937;
+padding:24px;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(0,0,0,0.22);
+transition:transform 0.2s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 .card h3{
 margin-bottom:10px;
+font-size:22px;
 }
 
 .card p{
-color:#555;
-margin-bottom:10px;
+color:#4b5563;
+margin-bottom:14px;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:30px;
-}
-
-.stat{
-background:rgba(255,255,255,0.1);
+.small-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
 padding:20px;
-border-radius:10px;
-text-align:center;
+border-radius:18px;
+}
+
+.small-card h3{
+margin-bottom:10px;
+font-size:22px;
+}
+
+.small-card p{
+color:rgba(255,255,255,0.84);
 }
 
 .categories{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
+gap:18px;
 }
 
 .category{
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:10px;
+background:rgba(255,255,255,0.08);
+padding:22px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
 .category h3{
-margin-bottom:10px;
+margin-bottom:8px;
 }
 
 .category p{
-margin-bottom:12px;
+color:rgba(255,255,255,0.82);
+margin-bottom:14px;
 }
 
 .sponsor{
-background:rgba(255,255,255,0.1);
+margin-top:18px;
 padding:30px;
-border-radius:16px;
-text-align:center;
-margin-top:40px;
+border-radius:24px;
+background:linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06));
+border:1px solid rgba(255,255,255,0.12);
+display:grid;
+grid-template-columns:1.3fr 0.7fr;
+gap:24px;
+align-items:center;
+}
+
+.sponsor h3{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.sponsor p{
+color:rgba(255,255,255,0.85);
+margin-bottom:16px;
+}
+
+.sponsor-card{
+background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,250,255,0.96));
+color:#1f2937;
+padding:22px;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(0,0,0,0.22);
+}
+
+.sponsor-mini{
+display:inline-block;
+padding:5px 10px;
+border-radius:999px;
+font-size:12px;
+font-weight:bold;
+background:linear-gradient(135deg,#dcfce7,#dbeafe);
+color:#1e3a8a;
+margin-bottom:10px;
 }
 
 .faq{
-max-width:800px;
+max-width:860px;
 margin:auto;
 }
 
 .faq-item{
-background:rgba(255,255,255,0.1);
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
+background:rgba(255,255,255,0.08);
+padding:22px;
+border-radius:18px;
+margin-bottom:16px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
 .faq-item h3{
-margin-bottom:10px;
+margin-bottom:8px;
+}
+
+.faq-item p{
+color:rgba(255,255,255,0.84);
 }
 
 footer{
 text-align:center;
-padding:30px;
-background:rgba(0,0,0,0.3);
+padding:36px 20px;
+background:rgba(0,0,0,0.28);
 margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.small{
+font-size:14px;
+opacity:0.78;
+margin-top:8px;
+}
+
+@media (max-width:900px){
+.hero h1{
+font-size:44px;
+}
+.sponsor{
+grid-template-columns:1fr;
+}
+}
+
+@media (max-width:640px){
+.hero h1{
+font-size:36px;
+}
+.hero p{
+font-size:18px;
+}
 }
 </style>
 </head>
@@ -212,84 +364,143 @@ margin-top:40px;
 </nav>
 
 <section class="hero">
-<h1>AI Tools Galaxy</h1>
-<p>Discover the best AI tools for writing, studying, productivity, and creativity in one place.</p>
+<div class="hero-badge">Modern AI directory for 2026</div>
+<h1>Discover the Best AI Tools for Writing, Study, Work, and Creativity</h1>
+<p>AI Tools Galaxy helps you explore useful AI tools faster with organized categories, featured picks, and practical tool pages.</p>
+<div class="hero-buttons">
 <a class="button" href="100-ai-tools.html">Explore AI Tools</a>
+<a class="secondary-button" href="#featured">See Top Picks</a>
+</div>
 </section>
 
 <section class="section">
 <h2>Search AI Tools</h2>
+<p class="section-subtitle">Search by topic and quickly jump to the right category page.</p>
 
-<div class="search">
-<input type="text" placeholder="Search AI tools...">
-<button>Search</button>
+<div class="search-box">
+<input type="text" id="toolSearch" placeholder="Search writing, students, image, productivity...">
+<button onclick="searchTools()">Search</button>
 </div>
+
+<div id="searchResults"></div>
 
 <div class="stats">
 <div class="stat">
 <h3>100+</h3>
 <p>AI tools listed</p>
 </div>
-
 <div class="stat">
 <h3>5</h3>
 <p>Main categories</p>
 </div>
-
 <div class="stat">
 <h3>Free</h3>
-<p>Many free tools</p>
+<p>Many tools have free plans</p>
 </div>
-
 <div class="stat">
 <h3>24/7</h3>
-<p>Available online</p>
+<p>Available worldwide</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="featured">
+<h2>Featured AI Tools</h2>
+<p class="section-subtitle">Start with the most useful categories and explore tools people use every day.</p>
+
+<div class="grid">
+<div class="card">
+<h3>🚀 100 Best AI Tools</h3>
+<p>Explore a curated list of the best free AI tools across productivity, writing, creativity, and learning.</p>
+<a class="button" href="100-ai-tools.html">Open Page</a>
+</div>
+
+<div class="card">
+<h3>🎓 AI Tools for Students</h3>
+<p>Find tools for studying, homework, note-taking, research, and exam preparation.</p>
+<a class="button" href="ai-tools-for-students.html">Open Page</a>
+</div>
+
+<div class="card">
+<h3>✍️ AI Writing Tools</h3>
+<p>Discover writing tools for essays, grammar, summaries, rewrites, and content creation.</p>
+<a class="button" href="ai-writing-tools.html">Open Page</a>
+</div>
+
+<div class="card">
+<h3>🎨 AI Image Tools</h3>
+<p>Create art, thumbnails, social media graphics, and visual content with AI image tools.</p>
+<a class="button" href="ai-image-tools.html">Open Page</a>
+</div>
+
+<div class="card">
+<h3>⚡ AI Productivity Tools</h3>
+<p>Use AI for task planning, automation, note-taking, meetings, and better workflows.</p>
+<a class="button" href="ai-productivity-tools.html">Open Page</a>
 </div>
 </div>
 </section>
 
 <section class="section">
-<h2>Featured AI Tools</h2>
+<h2>Top 10 AI Tools in 2026</h2>
+<p class="section-subtitle">A quick list of popular AI tools people use for writing, studying, productivity, design, and creativity.</p>
 
 <div class="grid">
-<div class="card">
-<h3>🚀 100 Best AI Tools</h3>
-<p>Explore a curated list of the best free AI tools available in 2026.</p>
-<a class="button" href="100-ai-tools.html">Open</a>
+<div class="small-card">
+<h3>1. ChatGPT</h3>
+<p>An AI assistant for writing, brainstorming, studying, and answering questions.</p>
 </div>
 
-<div class="card">
-<h3>🎓 AI Tools for Students</h3>
-<p>Tools that help with studying, research, homework and exam preparation.</p>
-<a class="button" href="ai-tools-for-students.html">Open</a>
+<div class="small-card">
+<h3>2. Grammarly</h3>
+<p>A writing assistant that improves grammar, spelling, and clarity.</p>
 </div>
 
-<div class="card">
-<h3>✍️ AI Writing Tools</h3>
-<p>Find the best AI tools for writing essays, blog posts and content.</p>
-<a class="button" href="ai-writing-tools.html">Open</a>
+<div class="small-card">
+<h3>3. Notion AI</h3>
+<p>A smart productivity tool for notes, summaries, and organization.</p>
 </div>
 
-<div class="card">
-<h3>🎨 AI Image Tools</h3>
-<p>Create art, graphics and social media visuals using AI generators.</p>
-<a class="button" href="ai-image-tools.html">Open</a>
+<div class="small-card">
+<h3>4. Canva AI</h3>
+<p>An easy tool for creating graphics, posts, and visual content.</p>
 </div>
 
-<div class="card">
-<h3>⚡ AI Productivity Tools</h3>
-<p>Automate tasks, manage projects and improve workflows with AI.</p>
-<a class="button" href="ai-productivity-tools.html">Open</a>
+<div class="small-card">
+<h3>5. Midjourney</h3>
+<p>A powerful AI image generator for creative visuals and artwork.</p>
+</div>
+
+<div class="small-card">
+<h3>6. DALL·E</h3>
+<p>A text-to-image AI tool for generating unique images from prompts.</p>
+</div>
+
+<div class="small-card">
+<h3>7. Quizlet</h3>
+<p>A popular learning platform with flashcards and study tools.</p>
+</div>
+
+<div class="small-card">
+<h3>8. Duolingo</h3>
+<p>An AI-powered language learning platform for students and beginners.</p>
+</div>
+
+<div class="small-card">
+<h3>9. Otter AI</h3>
+<p>A meeting and note transcription tool for productivity and work.</p>
+</div>
+
+<div class="small-card">
+<h3>10. Zapier AI</h3>
+<p>An automation tool that helps connect apps and save time.</p>
 </div>
 </div>
 </section>
 
 <section class="section">
 <h2>Top Recommended AI Tools</h2>
-<p class="section-subtitle">
-Below are some recommended AI tools that can later be used for affiliate links,
-partner placements, or sponsored recommendations.
-</p>
+<p class="section-subtitle">These featured slots can later be used for affiliate links, partner placements, or sponsored recommendations.</p>
 
 <div class="grid">
 <div class="card">
@@ -314,6 +525,7 @@ partner placements, or sponsored recommendations.
 
 <section class="section">
 <h2>Categories</h2>
+<p class="section-subtitle">Jump directly into the area that matches what you need.</p>
 
 <div class="categories">
 <div class="category">
@@ -342,9 +554,18 @@ partner placements, or sponsored recommendations.
 </div>
 
 <div class="sponsor">
-<h2>Featured Tool</h2>
-<p>This space can later be used for affiliate tools or sponsored AI products.</p>
+<div>
+<h3>Featured Tool</h3>
+<p>This space can later be used for affiliate tools or sponsored AI products. It gives you a clean place to monetize traffic when your site starts growing.</p>
 <a class="button" href="#">Coming Soon</a>
+</div>
+
+<div class="sponsor-card">
+<div class="sponsor-mini">Monetization Slot</div>
+<h3>Premium Placement</h3>
+<p>This card can later show a partner tool, affiliate offer, or promoted recommendation.</p>
+<a class="button" href="#">View Slot</a>
+</div>
 </div>
 </section>
 
@@ -359,19 +580,51 @@ partner placements, or sponsored recommendations.
 
 <div class="faq-item">
 <h3>Are the AI tools free?</h3>
-<p>Many tools offer free versions or trial plans.</p>
+<p>Many tools offer free versions or trial plans, while some also have paid features.</p>
 </div>
 
 <div class="faq-item">
 <h3>Who is this site for?</h3>
 <p>Students, creators, freelancers and anyone interested in AI technology.</p>
 </div>
+
+<div class="faq-item">
+<h3>How can this site make money?</h3>
+<p>Later this website can earn from affiliate links, sponsored tool placements, ads, and promoted reviews.</p>
+</div>
 </div>
 </section>
 
 <footer>
 <p>© 2026 AI Tools Galaxy</p>
+<p class="small">Discover, compare, and explore the latest AI tools.</p>
 </footer>
+
+<script>
+function searchTools(){
+const query = document.getElementById("toolSearch").value.toLowerCase().trim();
+const results = document.getElementById("searchResults");
+
+if(query.includes("writing") || query.includes("essay") || query.includes("grammar")){
+results.innerHTML = 'Best match: <a style="color:#8fe6ff;" href="ai-writing-tools.html">AI Writing Tools</a>';
+}
+else if(query.includes("student") || query.includes("study") || query.includes("homework") || query.includes("exam")){
+results.innerHTML = 'Best match: <a style="color:#8fe6ff;" href="ai-tools-for-students.html">AI Tools for Students</a>';
+}
+else if(query.includes("image") || query.includes("art") || query.includes("design") || query.includes("thumbnail")){
+results.innerHTML = 'Best match: <a style="color:#8fe6ff;" href="ai-image-tools.html">AI Image Tools</a>';
+}
+else if(query.includes("productivity") || query.includes("task") || query.includes("notes") || query.includes("workflow")){
+results.innerHTML = 'Best match: <a style="color:#8fe6ff;" href="ai-productivity-tools.html">AI Productivity Tools</a>';
+}
+else if(query.length > 0){
+results.innerHTML = 'Try browsing the full list here: <a style="color:#8fe6ff;" href="100-ai-tools.html">100 AI Tools</a>';
+}
+else{
+results.innerHTML = 'Please enter a keyword first.';
+}
+}
+</script>
 
 </body>
 </html>
