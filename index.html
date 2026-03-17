@@ -131,7 +131,7 @@ a{
 }
 
 .hero{
-  padding:90px 20px 40px;
+  padding:90px 20px 30px;
   text-align:center;
 }
 
@@ -196,44 +196,6 @@ a{
   transform:translateY(-2px);
 }
 
-.top-pick{
-  max-width:980px;
-  margin:0 auto 18px;
-  padding:32px 26px;
-  border-radius:24px;
-  background:linear-gradient(135deg,#6c4cff,#00c3ff);
-  box-shadow:0 18px 40px rgba(0,0,0,.28);
-}
-
-.top-pick small{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.18);
-  margin-bottom:12px;
-  font-weight:bold;
-}
-
-.top-pick h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.top-pick p{
-  max-width:620px;
-  margin:0 auto 20px;
-  color:white;
-}
-
-.top-pick a{
-  display:inline-block;
-  padding:14px 24px;
-  background:white;
-  color:#111827;
-  border-radius:12px;
-  font-weight:bold;
-}
-
 .quick-stats{
   max-width:980px;
   margin:26px auto 0;
@@ -277,6 +239,60 @@ a{
   text-align:center;
   color:var(--muted);
   font-size:18px;
+}
+
+.money-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.money-box{
+  border-radius:24px;
+  padding:28px 24px;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+
+.money-box small{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  margin-bottom:12px;
+  font-weight:bold;
+}
+
+.money-box h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.money-box p{
+  max-width:320px;
+  margin:0 auto 18px;
+  color:white;
+}
+
+.money-box a{
+  display:inline-block;
+  padding:14px 22px;
+  background:white;
+  color:#111827;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+.canva-box{
+  background:linear-gradient(135deg,#6c4cff,#00c3ff);
+}
+
+.grammarly-box{
+  background:linear-gradient(135deg,#00c3ff,#6c4cff);
+}
+
+.notion-box{
+  background:linear-gradient(135deg,#111827,#374151,#6c4cff);
 }
 
 .search-panel{
@@ -472,6 +488,7 @@ a{
   .quick-stats{
     grid-template-columns:repeat(2,1fr);
   }
+  .money-grid,
   .primary-grid{
     grid-template-columns:1fr;
   }
@@ -489,9 +506,6 @@ a{
   }
   .hero p{
     font-size:18px;
-  }
-  .top-pick h2{
-    font-size:28px;
   }
   .quick-stats{
     grid-template-columns:1fr;
@@ -524,31 +538,7 @@ a{
 
 <section class="hero">
   <div class="container">
-
     <div class="hero-tag">✨ Beautiful AI tools directory built for clicks</div>
-
-    <div class="top-pick">
-      <small>🔥 Top Pick</small>
-      <h2>Canva AI</h2>
-      <p>Create stunning designs, presentations and social media content with AI. Perfect for beginners, creators and students.</p>
-      <a href="https://www.canva.com" target="_blank">Try Canva Free →</a>
-    </div>
-    <div style="background:linear-gradient(135deg,#00c3ff,#6c4cff);padding:28px;border-radius:16px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.3);margin-top:20px;">
-
-<h2>✍️ Write Better Instantly</h2>
-
-<h3>Grammarly AI</h3>
-
-<p style="max-width:600px;margin:auto;margin-bottom:20px;">
-Fix grammar, improve clarity and write faster with AI. Perfect for students, emails and content.
-</p>
-
-<a href="https://www.grammarly.com" target="_blank" style="display:inline-block;padding:14px 24px;background:white;color:#000;border-radius:10px;font-weight:bold;text-decoration:none;">
-Try Grammarly →
-</a>
-
-</div>
-
     <h1>Find the Best AI Tools Without Wasting Time</h1>
     <p>Explore high-quality AI tools for writing, studying, productivity and creativity — all in one clean, colorful place.</p>
 
@@ -575,7 +565,36 @@ Try Grammarly →
         <p>Always available</p>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Top Recommendations</h2>
+    <p class="section-subtitle">These are your main money boxes. Later you can swap these direct links for affiliate links.</p>
+
+    <div class="money-grid">
+      <div class="money-box canva-box">
+        <small>🔥 Top Pick</small>
+        <h2>Canva AI</h2>
+        <p>Create stunning designs, presentations and social media content with AI. Perfect for beginners and creators.</p>
+        <a href="https://www.canva.com" target="_blank">Try Canva Free →</a>
+      </div>
+
+      <div class="money-box grammarly-box">
+        <small>✍️ Writing Pick</small>
+        <h2>Grammarly AI</h2>
+        <p>Fix grammar, improve clarity and write faster with AI. Great for students, emails and content.</p>
+        <a href="https://www.grammarly.com" target="_blank">Try Grammarly →</a>
+      </div>
+
+      <div class="money-box notion-box">
+        <small>🧠 Productivity Pick</small>
+        <h2>Notion AI</h2>
+        <p>Organize notes, tasks and projects in one smart workspace. Great for work, school and planning.</p>
+        <a href="https://www.notion.so" target="_blank">Try Notion →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -600,7 +619,6 @@ Try Grammarly →
     <p class="section-subtitle">These are the pages most people will want first.</p>
 
     <div class="primary-grid">
-
       <div class="feature-card">
         <div class="mini-tag">Most Clicked</div>
         <h3>Best AI Tools</h3>
@@ -621,7 +639,6 @@ Try Grammarly →
         <p>Useful tools for studying, homework, essays, notes and exam preparation.</p>
         <a class="button" href="ai-tools-for-students.html">Open Student Tools</a>
       </div>
-
     </div>
   </div>
 </section>
@@ -632,7 +649,6 @@ Try Grammarly →
     <p class="section-subtitle">Browse more useful pages and categories.</p>
 
     <div class="link-grid">
-
       <div class="card">
         <h3>100 AI Tools</h3>
         <p>Browse a large list of popular AI tools in one place.</p>
@@ -668,12 +684,11 @@ Try Grammarly →
         <p>Free tools for study help, notes and revision.</p>
         <a class="button" href="best-free-ai-tools-for-students.html">Open</a>
       </div>
-
     </div>
 
     <div class="money-note">
-      <h3>Top Recommendation Area</h3>
-      <p>This area is designed for your highest-click tool. Later you can replace direct links with affiliate links and turn traffic into income.</p>
+      <h3>Built for Clicks and Monetization</h3>
+      <p>The three boxes above are your strongest click zones. When your affiliate approvals come in, replace those direct links with your affiliate links.</p>
     </div>
   </div>
 </section>
@@ -720,7 +735,7 @@ function searchTools(){
   else if(query.includes("image") || query.includes("art") || query.includes("design")){
     results.innerHTML = 'Best match: <a style="color:#cfe7ff;font-weight:bold;" href="ai-image-tools.html">AI Image Tools</a>';
   }
-  else if(query.includes("productivity") || query.includes("workflow") || query.includes("task") || query.includes("automation")){
+  else if(query.includes("productivity") || query.includes("workflow") || query.includes("task") || query.includes("automation") || query.includes("notion")){
     results.innerHTML = 'Best match: <a style="color:#d6fff1;font-weight:bold;" href="ai-tools-for-productivity.html">AI Productivity Tools</a>';
   }
   else if(query.includes("free")){
@@ -729,11 +744,8 @@ function searchTools(){
   else if(query.includes("best") || query.includes("tools") || query.includes("all")){
     results.innerHTML = 'Best match: <a style="color:#ffd6f7;font-weight:bold;" href="best-ai-tools.html">Best AI Tools</a>';
   }
-  else if(query.length > 0){
-    results.innerHTML = 'No exact match found. Try: writing, students, productivity, free or design.';
-  }
   else{
-    results.innerHTML = 'Please enter a keyword first.';
+    results.innerHTML = 'No exact match found. Try: writing, students, productivity, free, design or notion.';
   }
 }
 </script>
